@@ -1,3 +1,4 @@
+import './style.css';
 import PredicaCard from './components/PredicaCard';
 
 const predicas = [
@@ -20,10 +21,12 @@ const predicas = [
 const Predicas = () => {
   return (
     <>
-      <h1>Prédicas</h1>
-      {predicas.map((predica) => {
-        return <PredicaCard key={predica.id} predica={predica} />;
-      })}
+      <h1 className="page-title">Prédicas</h1>
+      <div className="predica-cards">
+        {predicas.map((predica) => {
+          return <PredicaCard key={predica.id} predica={predica} />;
+        })}
+      </div>
     </>
   );
 };

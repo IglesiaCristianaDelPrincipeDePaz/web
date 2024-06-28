@@ -1,0 +1,11 @@
+.page-title {
+  text-align: center;
+  margin: 16px;
+}
+
+.predica-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}

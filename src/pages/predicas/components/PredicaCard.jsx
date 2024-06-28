@@ -1,9 +1,10 @@
+import './predicaCard.css';
+
 const PredicaCard = ({ predica }) => {
-  console.log(predica);
   const { titulo, autor, fecha, urlVideo } = predica;
   return (
-    <div>
-      <p>
+    <div className="card">
+      <p className="card-title">
         {titulo} | {autor}
       </p>
       <p>{fecha}</p>
