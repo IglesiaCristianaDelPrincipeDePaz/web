@@ -1,0 +1,18 @@
+ul {
+  background-color: #ddd;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+}
+
+.link:hover {
+  background-color: #bbb;
+}
