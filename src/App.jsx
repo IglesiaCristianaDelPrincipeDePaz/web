@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import Inicio from './pages/inicio';
 import Predicas from './pages/predicas';
+import Header from './components/Header';
 
 const App = () => {
   return (
     <>
-      <h1>Iglesia Cristiana del Príncipe de Paz</h1>
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/predicas" element={<Predicas />} />
