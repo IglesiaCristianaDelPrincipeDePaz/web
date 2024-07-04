@@ -6,7 +6,7 @@ const Predicas = () => {
   const [predicas, setPredicas] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/predicas')
+    fetch('https://api.principedepazica.com/predicas')
       .then((res) => res.json())
       .then((data) => setPredicas(data))
       .catch((err) => console.log(err));
