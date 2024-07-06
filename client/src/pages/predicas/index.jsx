@@ -6,7 +6,7 @@ const Predicas = () => {
   const [predicas, setPredicas] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.principedepazica.com/predicas')
+    fetch(`${import.meta.env.VITE_API_URL}/predicas`)
       .then((res) => res.json())
       .then((data) => setPredicas(data))
       .catch((err) => console.log(err));
@@ -17,7 +17,7 @@ const Predicas = () => {
       <h1 className="page-title">Prédicas</h1>
       <div className="predica-cards">
         {predicas.map((predica) => {
-          return <PredicaCard key={predica.id} predica={predica} />;
+          return <PredicaCard key={predica._id} predica={predica} />;
         })}
       </div>
     </>
