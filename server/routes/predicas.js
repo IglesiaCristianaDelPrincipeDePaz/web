@@ -1,25 +1,34 @@
 const express = require('express');
 const router = express.Router();
-// example
-const predicas = [
-  {
-    id: 1,
-    titulo: 'Atrévete a ser diferente',
-    autor: 'Juan Serveleon',
-    fecha: '2024-06-23',
-    urlVideo: 'https://youtu.be/nowlHasXSC8?si=33Fl9zMLJycqjCfu',
-  },
-  {
-    id: 2,
-    titulo: 'Peleando por un sueño',
-    autor: 'Juan Serveleon',
-    fecha: '2024-06-16',
-    urlVideo: 'https://youtu.be/pkrXjNFjL6E?si=Z16VcbfusizcwawS',
-  },
-];
+const Predica = require('../models/predica');
 
-router.get('/', (req, res) => {
-  res.send(predicas);
+// get all
+router.get('/', async (req, res) => {
+  try {
+    const predicas = await Predica.find();
+    res.json(predicas);
+  } catch (error) {
+    res.json({ message: error.message });
+  }
 });
+
+// get one
+
+// create one
+router.post('/', async (req, res) => {
+  const { titulo, autor, fecha, urlVideo } = req.body;
+  const predica = new Predica({ titulo, autor, fecha, urlVideo });
+
+  try {
+    const newPredica = await predica.save();
+    res.json(newPredica);
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
+
+// update one
+
+// delete one
 
 module.exports = router;
