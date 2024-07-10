@@ -7,7 +7,7 @@ import './style.css';
 const App = () => {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/predicas" element={<Predicas />} />
